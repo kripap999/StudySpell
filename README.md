@@ -1,4 +1,3 @@
-Original App Design Project - README Template
 # StudySpell 
 
 #### Description
