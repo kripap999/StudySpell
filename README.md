@@ -87,7 +87,7 @@ Flow Navigation (Screen to Screen)
 
 
 ###  Wireframes
-<img width="2388" height="1668" alt="IMG_0015" src="https://github.com/user-attachments/assets/f3b15b27-6b36-48b9-8b40-cbb113759e4d" />
+<img width="2388" height="1668" alt="IMG_0015" src="https://github.com/user-attachments/assets/a672e1b0-aac5-4fb6-84d6-47290883a485" />
 
 
 [BONUS] Digital Wireframes & Mockups
