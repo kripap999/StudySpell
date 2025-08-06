@@ -92,12 +92,22 @@ Flow Navigation (Screen to Screen)
 [BONUS] Digital Wireframes & Mockups
 [BONUS] Interactive Prototype
 
+### Video
+<div>
+    <a href="https://www.loom.com/share/9f4805c339a34b56b230a21a12f3bbfe">
+    </a>
+    <a href="https://www.loom.com/share/9f4805c339a34b56b230a21a12f3bbfe">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9f4805c339a34b56b230a21a12f3bbfe-bb7a4f759de22829-full-play.gif">
+    </a>
+  </div>
 
 ### Schema
 [This section will be completed in Unit 9]
 
 ### Models
 [Add table of models]
+
+
 
 ### Networking
 [Add list of network requests by screen ]
