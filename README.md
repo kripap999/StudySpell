@@ -1,4 +1,4 @@
-Original App Design Project - README Template
+
 # StudySpell 
 
 #### Description
@@ -17,18 +17,18 @@ Category: Productivity, Education
 1. #### User Stories (Required and Optional)
 
 ##### Required Must-have Stories:
-- User can start a Pomodoro session (25-min focus + break).
+- User can start a Pomodoro session (30-min focus + break).
 - After focus session, user receives break suggestion + motivational quote or random fun facts via public API
 - User sees total study time.
-- User can configure session/break durations in settings.
+- Daily planner with calendar integration.
+- Add tasks to a to-do list with deadlines.
 - Add tasks to a spellbook (to-do list).
 
 Optional Nice-to-have Stories:
+- User can configure session/break durations in settings.
 - User can register/login (via Firebase/UserDefaults).
- - Add tasks to a to-do list with deadlines.
 - Peaceful ambient music and visuals during study/break.
 - Harry Potter aesthetic: sounds, visuals, aesthetics.
-- Daily planner with calendar integration.
 - "Study Buddy" mode for live synced sessions with a friend.
 
  
@@ -87,7 +87,8 @@ Flow Navigation (Screen to Screen)
 
 
 ###  Wireframes
-[Add picture of your hand-sketched wireframes in this section] 
+<img width="2388" height="1668" alt="IMG_0015" src="https://github.com/user-attachments/assets/f3b15b27-6b36-48b9-8b40-cbb113759e4d" />
+
 
 [BONUS] Digital Wireframes & Mockups
 [BONUS] Interactive Prototype
