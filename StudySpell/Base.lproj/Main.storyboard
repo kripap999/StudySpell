@@ -287,75 +287,73 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IcK-t3-f32">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E9W-bp-Dfb">
-                                        <rect key="frame" x="20" y="30" width="353" height="500"/>
+                                    <!-- Main vertical stack: alignment changed to FILL -->
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="fill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="E9W-bp-Dfb">
+                                        <rect key="frame" x="20" y="30" width="353" height="750"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📊 Study Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VkO-3n-DWY">
-                                                <rect key="frame" x="30" y="0" width="293" height="60"/>
+                                                <rect key="frame" x="0" y="0" width="353" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="title-height"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="MagicOwl-PersonalUse" family="MagicOwl" pointSize="36"/>
-                                                <color key="textColor" red="0.71764705880000002" green="0.51372549020000002" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" red="0.7176470588" green="0.5137254902" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+
+                                            <!-- Streak + stats area (unchanged except it now fills width via alignment=fill) -->
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SmI-6N-YeW">
-                                                <rect key="frame" x="50" y="90" width="253" height="250"/>
+                                                <rect key="frame" x="0" y="90" width="353" height="250"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="streak-stack">
-                                                        <rect key="frame" x="0" y="0" width="253" height="80"/>
+                                                        <rect key="frame" x="50" y="0" width="253" height="80"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Streak" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="streak-title">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Streak" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="streak-title">
                                                                 <rect key="frame" x="0" y="0" width="253" height="20"/>
                                                                 <fontDescription key="fontDescription" name="MagicOwl-PersonalUse" family="MagicOwl" pointSize="18"/>
-                                                                <color key="textColor" red="0.38166824490000001" green="0.13566973290000001" blue="0.057286317589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <nil key="highlightedColor"/>
+                                                                <color key="textColor" red="0.3816682449" green="0.1356697329" blue="0.05728631759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="streak-value">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 days" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="streak-value">
                                                                 <rect key="frame" x="0" y="30" width="253" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="streak-height"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="MagicOwl-PersonalUse" family="MagicOwl" pointSize="42"/>
-                                                                <color key="textColor" red="0.71764705880000002" green="0.51372549020000002" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <nil key="highlightedColor"/>
+                                                                <color key="textColor" red="0.7176470588" green="0.5137254902" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
+
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="stats-stack">
-                                                        <rect key="frame" x="0" y="100" width="253" height="80"/>
+                                                        <rect key="frame" x="50" y="100" width="253" height="80"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="daily-stack">
                                                                 <rect key="frame" x="0" y="0" width="111.5" height="80"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daily-title">
+                                                                    <label text="Today" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="daily-title">
                                                                         <rect key="frame" x="0" y="0" width="111.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="MagicOwl-PersonalUse" family="MagicOwl" pointSize="16"/>
-                                                                        <color key="textColor" red="0.38166824490000001" green="0.13566973290000001" blue="0.057286317589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="textColor" red="0.3816682449" green="0.1356697329" blue="0.05728631759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0h 0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOh-PD-uEU">
+                                                                    <label text="0h 0m" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HOh-PD-uEU">
                                                                         <rect key="frame" x="0" y="29" width="111.5" height="51"/>
                                                                         <fontDescription key="fontDescription" name="MagicOwl-PersonalUse" family="MagicOwl" pointSize="24"/>
-                                                                        <color key="textColor" red="0.71764705880000002" green="0.51372549020000002" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="textColor" red="0.7176470588" green="0.5137254902" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="weekly-stack">
                                                                 <rect key="frame" x="141.5" y="0" width="111.5" height="80"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weekly-title">
+                                                                    <label text="This Week" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="weekly-title">
                                                                         <rect key="frame" x="0" y="0" width="111.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="MagicOwl-PersonalUse" family="MagicOwl" pointSize="16"/>
-                                                                        <color key="textColor" red="0.38166824490000001" green="0.13566973290000001" blue="0.057286317589999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="textColor" red="0.3816682449" green="0.1356697329" blue="0.05728631759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0h 0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ii-hY-K0D">
+                                                                    <label text="0h 0m" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Ii-hY-K0D">
                                                                         <rect key="frame" x="0" y="29" width="111.5" height="51"/>
                                                                         <fontDescription key="fontDescription" name="MagicOwl-PersonalUse" family="MagicOwl" pointSize="24"/>
-                                                                        <color key="textColor" red="0.71764705880000002" green="0.51372549020000002" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <nil key="highlightedColor"/>
+                                                                        <color key="textColor" red="0.7176470588" green="0.5137254902" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
@@ -364,66 +362,93 @@
                                                             <constraint firstAttribute="height" constant="80" id="stats-height"/>
                                                         </constraints>
                                                     </stackView>
+
+                                                    <!-- spacer view -->
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTX-gX-QGJ">
-                                                        <rect key="frame" x="0.0" y="200" width="253" height="50"/>
-                                                        <color key="backgroundColor" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="0.2" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="151.5" y="200" width="50" height="50"/>
+                                                        <color key="backgroundColor" red="0.662745098" green="0.662745098" blue="0.662745098" alpha="0.2" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="spacer-height"/>
+                                                            <constraint firstAttribute="width" constant="50" id="spacer-width"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="250" id="stats-container-height"/>
-                                                </constraints>
                                             </stackView>
+
+                                            <!-- Chart container: height increased; BarChartView added and pinned -->
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTP-KK-Jzd">
-                                                <rect key="frame" x="0.0" y="370" width="353" height="130"/>
-                                                <color key="backgroundColor" red="0.14117647059999999" green="0.1647058824" blue="0.15686274510000001" alpha="0.1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <rect key="frame" x="0" y="370" width="353" height="380"/>
+                                                <color key="backgroundColor" red="0.1411764706" green="0.1647058824" blue="0.1568627451" alpha="0.1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAR-CH-ART" customClass="BarChartView" customModule="DGCharts">
+                                                        <rect key="frame" x="0" y="0" width="353" height="380"/>
+                                                        <color key="backgroundColor" systemColor="clearColor"/>
+                                                    </view>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="130" id="chart-height"/>
+                                                    <constraint firstAttribute="height" constant="380" id="chart-height"/>
+                                                    <constraint firstItem="BAR-CH-ART" firstAttribute="top" secondItem="VTP-KK-Jzd" secondAttribute="top" id="cTop"/>
+                                                    <constraint firstAttribute="bottom" secondItem="BAR-CH-ART" secondAttribute="bottom" id="cBottom"/>
+                                                    <constraint firstItem="BAR-CH-ART" firstAttribute="leading" secondItem="VTP-KK-Jzd" secondAttribute="leading" id="cLead"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BAR-CH-ART" secondAttribute="trailing" id="cTrail"/>
+                                                </constraints>
+                                            </view>
+
+                                            <!-- footer spacer for scroll breathing room -->
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="footer-spacer">
+                                                <rect key="frame" x="0" y="780" width="353" height="100"/>
+                                                <color key="backgroundColor" systemColor="clearColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="footer-height"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="500" id="main-stack-height"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
+
+                                <!-- ScrollView layout guides/constraints -->
                                 <constraints>
                                     <constraint firstItem="752-LV-1bg" firstAttribute="trailing" secondItem="E9W-bp-Dfb" secondAttribute="trailing" constant="20" id="9MP-Et-3tQ"/>
                                     <constraint firstItem="E9W-bp-Dfb" firstAttribute="centerX" secondItem="IcK-t3-f32" secondAttribute="centerX" id="E3h-qi-Cs2"/>
                                     <constraint firstItem="E9W-bp-Dfb" firstAttribute="leading" secondItem="752-LV-1bg" secondAttribute="leading" constant="20" id="voz-hz-VHY"/>
                                     <constraint firstItem="E9W-bp-Dfb" firstAttribute="top" secondItem="ABe-Iu-vg5" secondAttribute="top" constant="30" id="title-top"/>
                                     <constraint firstItem="ABe-Iu-vg5" firstAttribute="bottom" secondItem="E9W-bp-Dfb" secondAttribute="bottom" constant="30" id="content-bottom"/>
+                                    <constraint firstItem="E9W-bp-Dfb" firstAttribute="width" secondItem="752-LV-1bg" secondAttribute="width" constant="-40" id="content-width"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="ABe-Iu-vg5"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="752-LV-1bg"/>
                             </scrollView>
                         </subviews>
+
                         <viewLayoutGuide key="safeArea" id="szR-tX-iVb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="IcK-t3-f32" firstAttribute="top" secondItem="szR-tX-iVb" secondAttribute="top" id="6aF-K8-0yE"/>
-                            <constraint firstItem="szR-tX-iVb" firstAttribute="bottom" secondItem="IcK-t3-f32" secondAttribute="bottom" id="AGI-Ii-9DF"/>
-                            <constraint firstItem="IcK-t3-f32" firstAttribute="leading" secondItem="szR-tX-iVb" secondAttribute="leading" id="YFC-rf-Ewd"/>
-                            <constraint firstItem="szR-tX-iVb" firstAttribute="trailing" secondItem="IcK-t3-f32" secondAttribute="trailing" id="vvc-HG-mdP"/>
+                            <constraint firstItem="IcK-t3-f32" firstAttribute="top" secondItem="p9B-K7-S9H" secondAttribute="top" id="6aF-K8-0yE"/>
+                            <constraint firstAttribute="bottom" secondItem="IcK-t3-f32" secondAttribute="bottom" id="AGI-Ii-9DF"/>
+                            <constraint firstItem="IcK-t3-f32" firstAttribute="leading" secondItem="p9B-K7-S9H" secondAttribute="leading" id="YFC-rf-Ewd"/>
+                            <constraint firstAttribute="trailing" secondItem="IcK-t3-f32" secondAttribute="trailing" id="vvc-HG-mdP"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Reports" image="Reports" landscapeImage="To - do" largeContentSizeImage="To - do" id="7bq-eI-haV">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+
+                    <!-- Add barChart outlet here -->
                     <connections>
                         <outlet property="chartContainerView" destination="VTP-KK-Jzd" id="88D-2b-iMB"/>
                         <outlet property="dailyHoursLabel" destination="HOh-PD-uEU" id="feG-Ka-GFi"/>
                         <outlet property="scrollView" destination="IcK-t3-f32" id="uIg-x6-Sq7"/>
                         <outlet property="streakLabel" destination="streak-value" id="Vit-Ot-Zsf"/>
                         <outlet property="weeklyHoursLabel" destination="0Ii-hY-K0D" id="KxT-fn-ipo"/>
+                        <outlet property="barChart" destination="BAR-CH-ART" id="barChart-outlet"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NRE-1E-qZz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119.8473282442749" y="-92.253521126760575"/>
         </scene>
+
+         
         <!--Focus-->
         <scene sceneID="eDQ-6u-wJC">
             <objects>

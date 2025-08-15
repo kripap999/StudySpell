@@ -20,6 +20,11 @@ class ReportsViewController: UIViewController {
         super.viewWillAppear(animated)
         updateStats()
         
+        // Update scroll view layout
+        DispatchQueue.main.async { [weak self] in
+            self?.updateScrollViewContentSize()
+        }
+        
         // Update chart after a small delay to ensure proper layout
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
             guard let self = self else { return }
@@ -28,9 +33,39 @@ class ReportsViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Final scroll view setup after all layouts are complete
+        DispatchQueue.main.async { [weak self] in
+            self?.finalizeScrollViewSetup()
+        }
+    }
+    
+    private func finalizeScrollViewSetup() {
+        // Ensure scroll view is working properly
+        scrollView.layoutIfNeeded()
+        updateScrollViewContentSize()
+        
+        print("📊 Final Scroll View Status:")
+        print("Frame: \(scrollView.frame)")
+        print("Content Size: \(scrollView.contentSize)")
+        print("Content Inset: \(scrollView.adjustedContentInset)")
+        print("Is Scrolling Enabled: \(scrollView.isScrollEnabled)")
+    }
+    
     private func setupUI() {
         // Set background color to match your app theme
         view.backgroundColor = UIColor(red: 0.66, green: 0.66, blue: 0.66, alpha: 1.0)
+        
+        // Setup scroll view
+        scrollView.isScrollEnabled = true
+        scrollView.showsVerticalScrollIndicator = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.alwaysBounceVertical = true
+        
+        // Configure content insets for navigation and tab bars
+        scrollView.contentInsetAdjustmentBehavior = .automatic
         
         // Setup chart container appearance
         chartContainerView.backgroundColor = UIColor(red: 0.14, green: 0.16, blue: 0.16, alpha: 0.9)
@@ -191,11 +226,47 @@ class ReportsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        // Update scroll view content size to ensure proper scrolling
+        updateScrollViewContentSize()
+        
         // Only update chart once the view is properly laid out
         // Prevent multiple updates during constraint resolution
         if chartContainerView.frame.width > 0 && chartContainerView.frame.height > 0 {
             DispatchQueue.main.async { [weak self] in
                 self?.updateChart(with: PomodoroSessionManager.shared.getWeeklyStats())
+            }
+        }
+    }
+    
+    private func updateScrollViewContentSize() {
+        // Force layout update to calculate actual content size
+        view.layoutIfNeeded()
+        scrollView.layoutIfNeeded()
+        
+        // Let Auto Layout determine the content size based on constraints
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            // Auto Layout should handle content size, but we can ensure proper scrolling
+            // by checking if content extends beyond the visible area
+            if let stackView = self.scrollView.subviews.first {
+                let contentHeight = stackView.frame.origin.y + stackView.frame.height + 60 // Extra padding
+                let visibleHeight = self.scrollView.bounds.height - self.scrollView.adjustedContentInset.top - self.scrollView.adjustedContentInset.bottom
+                
+                // Ensure content is tall enough to scroll
+                let finalContentHeight = max(contentHeight, visibleHeight + 100)
+                
+                self.scrollView.contentSize = CGSize(
+                    width: self.scrollView.bounds.width,
+                    height: finalContentHeight
+                )
+                
+                print("📊 Scroll View Layout Updated:")
+                print("Visible Height: \(visibleHeight)")
+                print("Content Height: \(contentHeight)")
+                print("Final Content Size: \(self.scrollView.contentSize)")
+                print("Content Insets: \(self.scrollView.adjustedContentInset)")
             }
         }
     }
