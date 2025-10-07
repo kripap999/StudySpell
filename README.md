@@ -90,8 +90,6 @@ Flow Navigation (Screen to Screen)
 <img width="2388" height="1668" alt="IMG_0015" src="https://github.com/user-attachments/assets/a672e1b0-aac5-4fb6-84d6-47290883a485" />
 
 
-[BONUS] Digital Wireframes & Mockups
-[BONUS] Interactive Prototype
 
 ### Video
 <div>
@@ -102,18 +100,7 @@ Flow Navigation (Screen to Screen)
     </a>
   </div>
 
-### Schema
-[This section will be completed in Unit 9]
 
-### Models
-[Add table of models]
-
-
-
-### Networking
-[Add list of network requests by screen ]
-[Create basic snippets for each Parse network request]
-[OPTIONAL: List endpoints if using existing API such as Yelp]
 
 
 
